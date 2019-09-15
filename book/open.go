@@ -8,6 +8,7 @@ import (
 	"os"
 )
 
+// Open reads the book file (or creates it) and parses connections into a single array
 func Open() (connectionsList []*connections.Connection, err error) {
 	homedir, err := os.UserHomeDir()
 	if err != nil {

@@ -7,6 +7,8 @@ import (
 	"log"
 )
 
+// ListConnections is a CLI command that lists all the saved connections in user's book.
+// It is called when the "ssh-book list" command is triggered by the user.
 func ListConnections(c *cli.Context) error {
 	connectionsList, err := book.Open()
 	if err != nil {
