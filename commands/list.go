@@ -17,7 +17,7 @@ func ListConnections(c *cli.Context) error {
 	}
 
 	println("List of all SSH connections :")
-	for _, connection := range connections.ListConnections(connectionsList) {
+	for _, connection := range connections.PrettifyList(connectionsList) {
 		println(connection)
 	}
 

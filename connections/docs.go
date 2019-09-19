@@ -2,7 +2,7 @@
 //
 // Prettify SSH connections into a list of strings :
 //   rawList := []*Connection{...}
-//   for _, connection := range connections.ListConnections(rawList) {
+//   for _, connection := range connections.PrettifyList(rawList) {
 //	   println(connection)
 //	 }
 //   // Output :
