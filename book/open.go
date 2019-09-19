@@ -1,7 +1,6 @@
 package book
 
 import (
-	"fmt"
 	"github.com/exybore/ssh-book/connections"
 	"gopkg.in/yaml.v2"
 	"io/ioutil"
@@ -10,12 +9,11 @@ import (
 
 // Open reads the book file (or creates it) and parses connections into a single array
 func Open() (connectionsList []*connections.Connection, err error) {
-	homedir, err := os.UserHomeDir()
+	filename, err := Path()
 	if err != nil {
 		return
 	}
 
-	filename := fmt.Sprintf("%s/.ssh-book.yml", homedir)
 	if _, err := os.Stat(filename); os.IsNotExist(err) {
 		_, err := os.Create(filename)
 		if err != nil {
